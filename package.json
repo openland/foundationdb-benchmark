@@ -1,0 +1,17 @@
+{
+  "name": "foundationdb-benchmark",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/openland/foundationdb-benchmark.git",
+  "author": "Steve Korshakov <steve@korshakov.com>",
+  "license": "MIT",
+  "scripts": {
+    "simple": "ts-node ./src/simple.ts"
+  },
+  "dependencies": {
+    "@types/node": "^14.0.4",
+    "foundationdb": "^1.0.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}
