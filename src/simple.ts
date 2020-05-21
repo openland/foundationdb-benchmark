@@ -14,9 +14,13 @@ export function currentTime() {
         .withValueEncoding(fdb.encoders.string);
     let start = currentTime();
     let pending: Promise<void>[] = [];
-    for (let i = 0; i < 1000; i++) {
+    for (let j = 0; j < 1000; j++) {
         pending.push(sp.doTn(async txn => {
-            txn.set([i], 'hello');
+            let pk: Promise<string | undefined>[] = [];
+            for (let i = 0; i < 400; i++) {
+                pk.push(txn.get([i]));
+            }
+            await Promise.all(pk);
         }));
     }
     await Promise.all(pending);
